@@ -83,23 +83,9 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative z-10 flex flex-col min-h-screen">
-        {/* Main Artist Background Visual */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center md:justify-end overflow-hidden pointer-events-none">
-          <motion.img 
-            src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop"
-            alt="MusicCHAEBOL.K"
-            referrerPolicy="no-referrer"
-            initial={{ opacity: 0, scale: 1.05 }}
-            whileInView={{ opacity: 0.7, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="h-full w-full object-cover md:translate-x-[10%]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-nero via-nero/60 md:via-nero/20 to-transparent"></div>
-        </div>
-
-        <main className="relative z-10 flex-grow grid grid-cols-1 md:grid-cols-12 px-8 md:px-16 items-center pt-32 pb-20">
-          <div className="md:col-span-7 flex flex-col justify-center py-12 md:py-0">
+      <section id="home" className="relative z-10 flex flex-col min-h-screen justify-center">
+        <main className="relative z-10 px-8 md:px-16 pt-32 pb-20 max-w-4xl mx-auto w-full text-center">
+          <div className="flex flex-col items-center justify-center">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -114,68 +100,41 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-6xl md:text-[100px] font-serif leading-[0.85] tracking-tighter mb-8"
+              className="text-6xl md:text-[120px] font-serif leading-[0.85] tracking-tighter mb-12"
             >
               Music<br/><span className="text-gold">CHAEBOL.K</span>
             </motion.h1>
             
             <motion.div 
-              initial={{ opacity: 0, borderLeftWidth: 0 }}
-              whileInView={{ opacity: 1, borderLeftWidth: 2 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="border-l-2 border-gold pl-8 mt-4"
+              transition={{ delay: 0.6 }}
+              className="flex flex-col items-center"
             >
-              <p className="text-stardust text-base md:text-lg leading-relaxed max-w-md font-light">
+              <div className="h-[1px] w-24 bg-gold mb-8 opacity-50"></div>
+              <p className="text-stardust text-lg md:text-xl leading-relaxed max-w-md font-light mb-4">
                 세포 하나하나까지 '음악인' 바로 그.
               </p>
+              <div className="space-y-2 mb-10">
+                <h4 className="text-gold/50 font-serif text-lg tracking-[0.2em]">음악재벌K</h4>
+                <p className="text-gold/30 text-[9px] tracking-[0.4em] uppercase">MusicCHAEBOL.K</p>
+              </div>
+
               <motion.button 
-                whileHover={{ backgroundColor: "var(--color-gold)", color: "#000" }}
+                whileHover={{ backgroundColor: "var(--color-gold)", color: "#000", scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('music')?.scrollIntoView({ behavior: 'smooth' })}
-                className="mt-10 px-10 py-4 border border-gold text-gold uppercase text-xs tracking-[0.3em] transition-all cursor-pointer"
+                className="px-12 py-5 border border-gold text-gold uppercase text-[11px] tracking-[0.4em] transition-all cursor-pointer bg-gold/5 backdrop-blur-sm"
               >
                 Listen Now
               </motion.button>
-            </motion.div>
-          </div>
 
-          {/* Immersive Visual Element */}
-          <div className="md:col-span-5 relative h-full flex items-center justify-center min-h-[400px]">
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 1 }}
-                className="relative w-[300px] md:w-[420px] h-[300px] md:h-[420px] bg-ebony border border-white/10 shadow-2xl overflow-hidden group"
-              >
-                {/* Atmospheric Background Visual */}
-                <div className="absolute inset-0 z-0">
-                  <div className="absolute inset-0 bg-gradient-to-t from-nero via-nero/40 to-transparent"></div>
-                  
-                  {/* Decorative Text Overlay matching the uploaded image style */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center space-y-8 p-6 text-center">
-                    <div className="space-y-1">
-                      <h4 className="text-gold font-serif text-2xl tracking-[0.2em] font-bold drop-shadow-2xl">음악재벌K</h4>
-                      <p className="text-gold/80 text-[10px] tracking-[0.4em] font-medium">MusicCHAEBOL.K</p>
-                    </div>
-                    <div className="relative">
-                      <h2 className="text-6xl md:text-7xl font-bold text-white tracking-widest drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-                        M.A.M
-                      </h2>
-                      <div className="absolute inset-0 bg-gold/10 blur-xl rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="absolute bottom-6 left-0 right-0 text-center z-20">
-                  <span className="text-[10px] tracking-[0.5em] text-gold uppercase block mb-1 font-medium bg-nero/60 backdrop-blur-md py-2 border-y border-white/5">New Release. MusicCHAEBOL.K</span>
-                </div>
-              </motion.div>
-            
-            {/* Vertical Accent Text */}
-            <div className="absolute -right-8 top-1/2 -translate-y-1/2 rotate-90 text-[10px] tracking-[0.8em] text-stardust/30 uppercase whitespace-nowrap hidden md:block">
-              A Day in the Life Aesthetic
-            </div>
+              <div className="mt-16 flex flex-col items-center space-y-4">
+                <span className="text-white/20 text-[10px] tracking-[0.8em] font-bold uppercase italic">M.A.M</span>
+                <span className="text-[9px] tracking-[0.6em] text-gold/20 uppercase block font-medium">New Release. MusicCHAEBOL.K</span>
+              </div>
+            </motion.div>
           </div>
         </main>
       </section>
@@ -442,7 +401,50 @@ export default function App() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Visuals content removed as requested */}
+            {/* Featured Large Image */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="md:col-span-2 md:row-span-2 aspect-[4/5] bg-[#E5E5E5] overflow-hidden border border-white/5 shadow-2xl group cursor-zoom-in relative"
+            >
+              <img 
+                src="/HP2.png" 
+                alt="MusicCHAEBOL.K Main Visual" 
+                className="w-full h-full object-contain transition-all duration-1000 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-700" />
+              <div className="absolute bottom-6 left-6 text-black/50 text-[10px] tracking-[0.5em] uppercase pointer-events-none">
+                Visual 01 / Noir Portrait
+              </div>
+            </motion.div>
+
+            {/* Grid Items */}
+            {[
+              { id: '02', label: 'Perspective', url: '/HP3.png', scale: 'object-contain' },
+              { id: '03', label: 'Sentiment', url: '/HP4.png', scale: 'object-contain grayscale hover:grayscale-0' },
+              { id: '04', label: 'Presence', url: '/HP5.png', scale: 'object-contain brightness-95 group-hover:brightness-100' },
+              { id: '05', label: 'Character', url: '/HP1.png', scale: 'object-contain' }
+            ].map((item, i) => (
+              <motion.div 
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * i }}
+                className="aspect-square bg-[#E5E5E5] overflow-hidden border border-white/5 shadow-2xl group cursor-zoom-in relative"
+              >
+                <img 
+                  src={item.url} 
+                  alt={`MusicCHAEBOL.K Visual ${item.id}`} 
+                  className={`w-full h-full ${item.scale} transition-all duration-1000 group-hover:scale-105`}
+                />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-700" />
+                <div className="absolute top-4 left-4 text-black/30 text-[9px] tracking-widest uppercase">
+                  {item.label}
+                </div>
+              </motion.div>
+            ))}
           </div>
 
           <motion.div 
