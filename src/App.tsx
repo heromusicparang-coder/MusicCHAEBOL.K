@@ -499,7 +499,7 @@ export default function App() {
         </div>
         <div className="flex justify-center items-center gap-6">
           <div className="w-12 h-[1px] bg-gold/30"></div>
-          <div className="text-gold text-[11px] italic font-serif">"이젠 정말 날 잊었나? 이젠 정말 날 잊어다오! 떠나지 않아."</div>
+          <div className="text-gold text-3xl md:text-4xl font-serif">"HearWeGO!"</div>
           <div className="w-12 h-[1px] bg-gold/30"></div>
         </div>
         <div className="flex justify-center md:justify-end gap-6 text-stardust">
