@@ -256,20 +256,37 @@ export default function App() {
               >
                 Information
               </motion.span>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="text-4xl md:text-5xl font-serif tracking-tight mb-12"
-              >
-                음악재벌K<br/>
-                <span className="text-gold/80 flex items-center gap-4">
-                  <span className="text-2xl font-sans font-light tracking-[0.2em]">MusicCHAEBOL.K</span>
-                  <div className="h-[1px] w-20 bg-gold/30"></div>
-                </span>
-                <span className="text-2xl italic font-serif mt-2 block">PROFILE</span>
-              </motion.h2>
+              
+              <div className="flex flex-col md:flex-row md:items-end gap-8 mb-12">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="w-40 h-40 md:w-48 md:h-56 bg-ebony rounded-lg overflow-hidden border border-white/10 shadow-2xl relative group"
+                >
+                  <img 
+                    src="/smallPROFILE1.png" 
+                    alt="MusicCHAEBOL.K Profile Portrait" 
+                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gold/5 group-hover:bg-transparent transition-colors"></div>
+                </motion.div>
+
+                <motion.h2 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="text-4xl md:text-5xl font-serif tracking-tight"
+                >
+                  음악재벌K<br/>
+                  <span className="text-gold/80 flex items-center gap-4">
+                    <span className="text-2xl font-sans font-light tracking-[0.2em]">MusicCHAEBOL.K</span>
+                  </span>
+                  <span className="text-2xl italic font-serif mt-2 block">PROFILE</span>
+                </motion.h2>
+              </div>
 
               <div className="space-y-12">
                 <div className="grid grid-cols-2 gap-8">
@@ -474,21 +491,24 @@ export default function App() {
           </motion.h2>
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             {[
-              { label: "Instagram", value: "@musicchaebolk", link: "#" },
+              { label: "Instagram", value: "@musicchaebolk", link: "https://www.instagram.com/musicchaebolk" },
               { label: "YouTube", value: "MusicCHAEBOL.K", link: "#" },
               { label: "Management", value: "musicchaebolk@naver.com", link: "mailto:musicchaebolk@naver.com" }
             ].map((item, i) => (
-              <motion.div 
+              <motion.a 
                 key={item.label}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * i }}
-                className="group cursor-pointer"
+                className="group cursor-pointer block"
               >
                 <span className="text-[10px] uppercase tracking-[0.3em] text-stardust/40 block mb-2">{item.label}</span>
                 <span className="text-gold text-lg md:text-xl font-medium group-hover:text-gold/70 transition-colors">{item.value}</span>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
@@ -506,18 +526,21 @@ export default function App() {
         </div>
         <div className="flex justify-center md:justify-end gap-6 text-stardust">
           {[
-            { icon: Instagram, label: "IG" },
-            { icon: Youtube, label: "YT" },
-            { icon: Music2, label: "SC" }
-          ].map(({ icon: Icon, label }) => (
-            <motion.div
+            { icon: Instagram, label: "IG", url: "https://www.instagram.com/musicchaebolk" },
+            { icon: Youtube, label: "YT", url: "#" },
+            { icon: Music2, label: "SC", url: "#" }
+          ].map(({ icon: Icon, label, url }) => (
+            <motion.a
               key={label}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ borderColor: "var(--color-gold)", color: "var(--color-gold)" }}
               className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[10px] cursor-pointer transition-colors"
             >
               <Icon size={14} className="md:hidden" />
               <span className="hidden md:block">{label}</span>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </footer>
