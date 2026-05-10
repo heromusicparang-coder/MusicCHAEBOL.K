@@ -102,7 +102,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-8xl md:text-[160px] font-serif leading-[0.85] tracking-tighter mb-12 notranslate"
+              className="text-5xl md:text-[160px] font-serif leading-[0.85] tracking-tighter mb-12 notranslate"
               translate="no"
             >
               Music<br/><span className="text-gold">CHAEBOL.K</span>
@@ -120,7 +120,7 @@ export default function App() {
                 세포 하나하나까지 '음악인' 바로 그.
               </p>
               <div className="mb-10 notranslate" translate="no">
-                <h4 className="text-gold/60 font-serif text-7xl md:text-[120px] leading-tight tracking-[0.2em]">음악재벌K</h4>
+                <h4 className="text-gold/60 font-serif text-5xl md:text-[120px] leading-tight tracking-[0.2em]">음악재벌K</h4>
               </div>
 
               <motion.button 
@@ -140,7 +140,7 @@ export default function App() {
                   translate="no"
                 >
                   <span className="text-[10px] md:text-xs tracking-[0.8em] text-gold/40 uppercase mb-4 font-medium">New Release.</span>
-                  <span className="sparkle-text text-5xl md:text-6xl font-black tracking-[0.3em] uppercase italic leading-none">M.A.M</span>
+                  <span className="sparkle-text text-4xl md:text-6xl font-black tracking-[0.3em] uppercase italic leading-none">M.A.M</span>
                 </motion.div>
               </div>
             </motion.div>
