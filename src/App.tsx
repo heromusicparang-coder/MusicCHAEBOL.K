@@ -194,10 +194,10 @@ export default function App() {
                 className="relative aspect-square bg-ebony border border-white/5 shadow-2xl flex items-center justify-center overflow-hidden group"
               >
                   <img 
-                    src="https://images.unsplash.com/photo-1514525253344-f814d0743b1a?q=80&w=1974&auto=format&fit=crop" 
+                    src="/smallJaket1.png" 
                     alt="MusicCHAEBOL.K Visual" 
                     referrerPolicy="no-referrer"
-                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
+                    className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-1000"
                   />
                 <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-black/80 z-10" />
                 <Disc3 className="w-32 h-32 text-gold/40 animate-spin-slow relative z-20" />
