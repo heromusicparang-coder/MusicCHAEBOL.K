@@ -54,10 +54,11 @@ export default function App() {
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-gold tracking-[0.3em] text-sm font-semibold cursor-pointer"
+          className="text-gold tracking-[0.3em] text-sm font-semibold cursor-pointer notranslate"
+          translate="no"
           onClick={() => { setActiveTab("Home"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
         >
-          OFFICIAL ARCHIVE
+          MusicCHAEBOL.K ARCHIVE
         </motion.div>
         <div className="hidden md:flex gap-12 text-[11px] tracking-[0.2em] text-stardust font-medium uppercase">
           {["Home", "Music", "Profile", "Visuals", "Connect"].map((item, i) => (
@@ -75,7 +76,7 @@ export default function App() {
               }}
               className={`hover:text-gold transition-colors relative group ${activeTab === item ? "text-gold" : ""}`}
             >
-              {item}
+              <span className="notranslate" translate="no">{item}</span>
               <span className={`absolute -bottom-1 left-0 h-[1px] bg-gold transition-all ${activeTab === item ? "w-full" : "w-0 group-hover:w-full"}`}></span>
             </motion.button>
           ))}
@@ -91,7 +92,8 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-gold font-serif italic text-xl md:text-2xl mb-4 tracking-wide"
+              className="text-gold font-serif italic text-xl md:text-2xl mb-4 tracking-wide notranslate"
+              translate="no"
             >
               -HearWeGo!-
             </motion.h2>
@@ -100,7 +102,8 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-6xl md:text-[120px] font-serif leading-[0.85] tracking-tighter mb-12"
+              className="text-8xl md:text-[160px] font-serif leading-[0.85] tracking-tighter mb-12 notranslate"
+              translate="no"
             >
               Music<br/><span className="text-gold">CHAEBOL.K</span>
             </motion.h1>
@@ -116,9 +119,8 @@ export default function App() {
               <p className="text-stardust text-lg md:text-xl leading-relaxed max-w-md font-light mb-4">
                 세포 하나하나까지 '음악인' 바로 그.
               </p>
-              <div className="space-y-2 mb-10">
-                <h4 className="text-gold/50 font-serif text-lg tracking-[0.2em]">음악재벌K</h4>
-                <p className="text-gold/30 text-[9px] tracking-[0.4em] uppercase">MusicCHAEBOL.K</p>
+              <div className="mb-10 notranslate" translate="no">
+                <h4 className="text-gold/60 font-serif text-7xl md:text-[120px] leading-tight tracking-[0.2em]">음악재벌K</h4>
               </div>
 
               <motion.button 
@@ -130,9 +132,16 @@ export default function App() {
                 Listen Now
               </motion.button>
 
-              <div className="mt-16 flex flex-col items-center space-y-4">
-                <span className="text-white/20 text-[10px] tracking-[0.8em] font-bold uppercase italic">M.A.M</span>
-                <span className="text-[9px] tracking-[0.6em] text-gold/20 uppercase block font-medium">New Release. MusicCHAEBOL.K</span>
+              <div className="mt-20 flex flex-col items-center">
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  className="flex flex-col items-center notranslate" 
+                  translate="no"
+                >
+                  <span className="text-[10px] md:text-xs tracking-[0.8em] text-gold/40 uppercase mb-4 font-medium">New Release.</span>
+                  <span className="sparkle-text text-5xl md:text-6xl font-black tracking-[0.3em] uppercase italic leading-none">M.A.M</span>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -157,12 +166,13 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl md:text-6xl font-serif tracking-tight mb-4"
+                className="text-4xl md:text-6xl font-serif tracking-tight mb-4 notranslate"
+                translate="no"
               >
                 MusicCHAEBOL.K Official
               </motion.h2>
               <p className="text-stardust/60 text-sm md:text-base max-w-2xl font-light leading-relaxed">
-                음악으로 채워진 하루를 모든 감각으로 받아들이는 한 사람의 자아를 투영하는 MusicCHAEBOL.K의 공식 아카이브입니다.
+                음악으로 채워진 하루를 모든 감각으로 받아들이는 한 사람의 자아를 투영하는 <span className="notranslate" translate="no">MusicCHAEBOL.K</span>의 공식 아카이브입니다.
               </p>
             </div>
             <motion.div 
@@ -172,9 +182,9 @@ export default function App() {
               transition={{ delay: 0.4 }}
               className="flex items-center gap-6 text-stardust/50"
             >
-              <div className="flex flex-col items-end">
+              <div className="flex flex-col items-end notranslate" translate="no">
                 <span className="text-[10px] tracking-widest uppercase">Artist</span>
-                <span className="text-sm text-gold">MusicCHAEBOL.K</span>
+                <span className="text-sm text-gold notranslate" translate="no">MusicCHAEBOL.K</span>
               </div>
               <div className="w-[1px] h-10 bg-white/10"></div>
               <div className="flex flex-col items-end">
@@ -220,12 +230,12 @@ export default function App() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="h-[1px] w-8 bg-gold/50"></div>
-                  <h3 className="text-gold text-[10px] tracking-[0.4em] uppercase font-bold text-center">ALBUM INTRODUCTION</h3>
+                  <h3 className="notranslate text-gold text-[10px] tracking-[0.4em] uppercase font-bold text-center" translate="no">MUSIC / ALBUM INTRODUCTION</h3>
                   <div className="h-[1px] w-8 bg-gold/50"></div>
                 </div>
                 
                 <div className="space-y-4 text-stardust/80 text-sm leading-relaxed font-light italic text-center px-4">
-                  <p className="text-gold/90 font-medium not-italic mb-6">‘음악재벌K 1st. M.A.M'</p>
+                  <p className="text-gold/90 font-medium not-italic mb-6 notranslate" translate="no">‘음악재벌K 1st. M.A.M'</p>
                   <p>엄마.<br/>당신의 아들로 태어나 마이크를 쥐고 <br/>정성껏 담았습니다. <br/>이야기를, 소리를, 삶을.</p>
                   <p>여러분께 닿을 순간까지 아름답기만을 바랐습니다.<br/>팔 벌려 안아줄 반가운 사람처럼, 지금 들리는 소리에 담은 정성을 마음껏 누려주시옵소서.</p>
                   <p className="text-xs pt-4 border-t border-white/5 opacity-60">* 혼자만의 속삭임이 기타리스트 '이완희' 군을 만나, 어우러지고, 멋들어지고, 생기가 더 해졌습니다.</p>
@@ -268,42 +278,43 @@ export default function App() {
                   ))}
                 </div>
               </div>
-
-              {/* Credits Section */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="bg-ebony/40 p-8 border border-white/5"
-              >
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="text-gold text-[10px] tracking-[0.4em] uppercase font-bold">CREDITS</span>
-                  <div className="h-[1px] flex-grow bg-white/5"></div>
-                </div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
-                  {[
-                    { label: "작사, 작곡", value: "음악재벌K" },
-                    { label: "편곡", value: "이완희 & 음악재벌K, DJXIS" },
-                    { label: "TRACKING & SOUND DESIGN", value: "음악재벌K & 이완희" },
-                    { label: "GUITAR", value: "이완희" },
-                    { label: "VOCAL", value: "음악재벌K" },
-                    { label: "RECORDING", value: "음악재벌K" },
-                    { label: "MIXING & MASTERING", value: "ARTSTAGE Audio 천호성" },
-                    { label: "CHORUS", value: "Yunnia (윤니아), 오고은" },
-                    { label: "ALBUM ART WORK", value: "Jung jin hee" },
-                    { label: "THANKS TO", value: "first of all 'YOU'" },
-                    { label: "VERY ~ SPECIAL THANKS TO", value: "세상의 모든 울 엄마들" }
-                  ].map((credit, i) => (
-                    <div key={credit.label} className="space-y-1">
-                      <span className="text-[10px] uppercase tracking-widest text-gold/40 block">{credit.label}</span>
-                      <span className="text-stardust/90 text-xs font-light tracking-wide">{credit.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
             </div>
           </div>
+
+          {/* Credits Section - Moved to full width */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-ebony/40 p-8 md:p-12 border border-white/5 max-w-6xl mx-auto w-full"
+          >
+            <div className="flex items-center gap-4 mb-10">
+              <span className="text-gold text-[10px] tracking-[0.4em] uppercase font-bold">CREDITS</span>
+              <div className="h-[1px] flex-grow bg-white/5"></div>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-8">
+              {[
+                { label: "작사, 작곡", value: <span className="notranslate" translate="no">음악재벌K (MusicCHAEBOL.K)</span> },
+                { label: "편곡", value: <span className="notranslate" translate="no">이완희 & 음악재벌K (MusicCHAEBOL.K), DJXIS</span> },
+                { label: "TRACKING & SOUND DESIGN", value: <span className="notranslate" translate="no">음악재벌K (MusicCHAEBOL.K) & 이완희</span> },
+                { label: "GUITAR", value: "이완희" },
+                { label: "VOCAL", value: <span className="notranslate" translate="no">음악재벌K (MusicCHAEBOL.K)</span> },
+                { label: "RECORDING", value: <span className="notranslate" translate="no">음악재벌K (MusicCHAEBOL.K)</span> },
+                { label: "MIXING & MASTERING", value: "ARTSTAGE Audio 천호성" },
+                { label: "CHORUS", value: "Yunnia (윤니아), 오고은" },
+                { label: "ALBUM ART WORK", value: "Jung jin hee" },
+                { label: "THANKS TO", value: "first of all 'YOU'" },
+                { label: "VERY ~ SPECIAL THANKS TO", value: "세상의 모든 울 엄마들", className: "sm:col-span-2 lg:col-span-2" }
+              ].map((credit, i) => (
+                <div key={credit.label} className={`space-y-2 ${credit.className || ""}`}>
+                  <span className="text-[10px] uppercase tracking-widest text-gold/40 block border-b border-gold/10 pb-1">{credit.label}</span>
+                  <span className="text-stardust/90 text-sm font-light tracking-wide block">{credit.value}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
@@ -345,8 +356,8 @@ export default function App() {
                   className="text-4xl md:text-5xl font-serif tracking-tight"
                 >
                   음악재벌K<br/>
-                  <span className="text-gold/80 flex items-center gap-4">
-                    <span className="text-2xl font-sans font-light tracking-[0.2em]">MusicCHAEBOL.K</span>
+                  <span className="text-gold/80 flex items-center gap-4 notranslate" translate="no">
+                    <span className="text-2xl font-sans font-light tracking-[0.2em] notranslate" translate="no">MusicCHAEBOL.K</span>
                   </span>
                   <span className="text-2xl italic font-serif mt-2 block">PROFILE</span>
                 </motion.h2>
@@ -466,7 +477,8 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl md:text-6xl font-serif tracking-tight mb-8"
+                className="text-4xl md:text-6xl font-serif tracking-tight mb-8 notranslate"
+                translate="no"
               >
                 Visual Identity
               </motion.h2>
@@ -481,57 +493,56 @@ export default function App() {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {/* Featured Large Image */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="col-span-2 row-span-2 aspect-[4/5] md:aspect-auto bg-[#E5E5E5] overflow-hidden border border-white/5 shadow-2xl group cursor-zoom-in relative"
-            >
-              <img 
-                src="/HP2.png" 
-                alt="MusicCHAEBOL.K Main Visual" 
-                className="w-full h-full object-contain transition-all duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-700" />
-              <div className="absolute bottom-6 left-6 text-black/50 text-[10px] tracking-[0.5em] uppercase pointer-events-none">
-                Visual 01 / Noir Portrait
-              </div>
-            </motion.div>
-
-            {/* Grid Items */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
             {[
-              { id: '02', label: 'Perspective', url: '/HP3.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
-              { id: '03', label: 'Sentiment', url: '/HP4.png', scale: 'object-contain grayscale hover:grayscale-0', className: 'col-span-1 row-span-1' },
-              { id: '04', label: 'Presence', url: '/HP5.png', scale: 'object-contain brightness-95 group-hover:brightness-100', className: 'col-span-1 row-span-2' },
-              { id: '05', label: 'Character', url: '/HP1.png', scale: 'object-contain', className: 'col-span-2 md:col-span-1 row-span-1' },
-              { id: '06', label: 'Reflection', url: '/HP6.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
-              { id: '07', label: 'Aura', url: '/HP7.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
-              { id: '08', label: 'Moment', url: '/HP8.png', scale: 'object-contain', className: 'col-span-2 row-span-1' },
-              { id: '09', label: 'Essence', url: '/HP9-1.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
-              { id: '10', label: 'Rhythm', url: '/HP10-1.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
-              { id: '11', label: 'Soul', url: '/HP11-1.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
-              { id: '12', label: 'Vision', url: '/HP12-1.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
-              { id: '13', label: 'Depth', url: '/HP13.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
-              { id: '14', label: 'Contrast', url: '/HP14.png', scale: 'object-contain', className: 'col-span-2 md:col-span-1 row-span-1' },
-              { id: '15', label: 'Harmony', url: '/HP15.png', scale: 'object-contain', className: 'col-span-1 row-span-1' }
+              { id: '01', label: 'Nocturne', className: 'col-span-2 row-span-2' },
+              { id: '02', label: 'Horizon', className: 'col-span-1 row-span-1' },
+              { id: '03', label: 'Echo', className: 'col-span-1 row-span-1' },
+              { id: '04', label: 'Pulse', className: 'col-span-1 row-span-2' },
+              { id: '05', label: 'Zenith', className: 'col-span-1 row-span-1' },
+              { id: '06', label: 'Mirage', className: 'col-span-1 row-span-1' },
+              { id: '07', label: 'Flow', className: 'col-span-1 row-span-1' },
+              { id: '08', label: 'Resonance', className: 'col-span-2 row-span-1' },
+              { id: '11', label: 'Bloom', className: 'col-span-1 row-span-1' },
+              { id: '09', label: 'Void', className: 'col-span-2 row-span-2' },
+              { id: '10', label: 'Spectrum', className: 'col-span-1 row-span-1' },
+              { id: '12', label: 'Catalyst', className: 'col-span-1 row-span-2' },
+              { id: '13', label: 'Drift', className: 'col-span-1 row-span-1' },
+              { id: '14', label: 'Epoch', className: 'col-span-1 row-span-1' },
+              { id: '15', label: 'Flux', className: 'col-span-1 row-span-1' },
+              { id: '16', label: 'Glow', className: 'col-span-2 row-span-1' },
+              { id: '17', label: 'Halo', className: 'col-span-2 row-span-2' },
+              { id: '18', label: 'Ion', className: 'col-span-1 row-span-1' },
+              { id: '19', label: 'Jolt', className: 'col-span-1 row-span-1' },
+              { id: '20', label: 'Kinetic', className: 'col-span-2 row-span-1' },
+              { id: '21', label: 'Lucid', className: 'col-span-1 row-span-2' },
+              { id: '22', label: 'Mystic', className: 'col-span-1 row-span-1' },
+              { id: '23', label: 'Nexus', className: 'col-span-1 row-span-1' },
+              { id: '24', label: 'Orbit', className: 'col-span-1 row-span-1' },
+              { id: '25', label: 'Phase', className: 'col-span-2 row-span-2' },
+              { id: '26', label: 'Quartz', className: 'col-span-1 row-span-1' },
+              { id: '27', label: 'Rift', className: 'col-span-1 row-span-1' },
+              { id: '28', label: 'Solace', className: 'col-span-1 row-span-2' },
+              { id: '29', label: 'Trace', className: 'col-span-1 row-span-1' },
+              { id: '30', label: 'Unity', className: 'col-span-1 row-span-1' },
+              { id: '31', label: 'Vital', className: 'col-span-2 row-span-1' },
+              { id: '32', label: 'Warp', className: 'col-span-1 row-span-1' },
             ].map((item, i) => (
               <motion.div 
                 key={item.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.05 * i }}
-                className={`${item.className} aspect-square md:aspect-auto bg-[#E5E5E5] overflow-hidden border border-white/5 shadow-2xl group cursor-zoom-in relative`}
+                transition={{ duration: 0.8, delay: (i % 6) * 0.1 }}
+                className={`${item.className} aspect-square md:aspect-auto bg-ebony overflow-hidden border border-white/5 shadow-2xl group cursor-pointer relative rounded-sm`}
               >
                 <img 
-                  src={item.url} 
+                  src={`/HP${item.id}.png`} 
                   alt={`MusicCHAEBOL.K Visual ${item.id}`} 
-                  className={`w-full h-full ${item.scale} transition-all duration-1000 group-hover:scale-105`}
+                  className="w-full h-full object-contain transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1"
                 />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-700" />
-                <div className="absolute top-4 left-4 text-black/30 text-[9px] tracking-widest uppercase">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 text-white text-[9px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-2 group-hover:translate-y-0">
                   {item.label}
                 </div>
               </motion.div>
@@ -566,7 +577,7 @@ export default function App() {
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             {[
               { label: "Instagram", value: "@musicchaebolk", link: "https://www.instagram.com/musicchaebolk" },
-              { label: "YouTube", value: "MusicCHAEBOL.K", link: "#" },
+              { label: "YouTube", value: <span className="notranslate" translate="no">MusicCHAEBOL.K</span>, link: "#" },
               { label: "Management", value: "musicchaebolk@naver.com", link: "mailto:musicchaebolk@naver.com" }
             ].map((item, i) => (
               <motion.a 
@@ -578,7 +589,8 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * i }}
-                className="group cursor-pointer block"
+                className="group cursor-pointer block notranslate"
+                translate="no"
               >
                 <span className="text-[10px] uppercase tracking-[0.3em] text-stardust/40 block mb-2">{item.label}</span>
                 <span className="text-gold text-lg md:text-xl font-medium group-hover:text-gold/70 transition-colors">{item.value}</span>
@@ -590,12 +602,12 @@ export default function App() {
 
       {/* Bottom Decorative Bar */}
       <footer className="relative z-10 px-8 md:px-16 py-8 grid grid-cols-1 md:grid-cols-3 border-t border-white/5 items-center gap-6 md:gap-0 bg-nero">
-        <div className="text-[10px] tracking-[0.2em] text-stardust text-center md:text-left">
+        <div className="text-[10px] tracking-[0.2em] text-stardust text-center md:text-left notranslate" translate="no">
           &copy; 2026 MusicCHAEBOL.K. ALL RIGHTS RESERVED.
         </div>
-        <div className="flex justify-center items-center gap-6">
+        <div className="flex justify-center items-center gap-6 notranslate" translate="no">
           <div className="w-12 h-[1px] bg-gold/30"></div>
-          <div className="text-gold text-3xl md:text-4xl font-serif">"HearWeGO!"</div>
+          <div className="text-gold text-3xl md:text-4xl font-serif notranslate" translate="no">"HearWeGo!"</div>
           <div className="w-12 h-[1px] bg-gold/30"></div>
         </div>
         <div className="flex justify-center md:justify-end gap-6 text-stardust">
@@ -624,8 +636,28 @@ export default function App() {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
         .animate-spin-slow {
           animation: spin-slow 20s linear infinite;
+        }
+        .sparkle-text {
+          background: linear-gradient(
+            to right, 
+            #b8860b 0%, 
+            #ffd700 25%, 
+            #ffffff 50%, 
+            #ffd700 75%, 
+            #b8860b 100%
+          );
+          background-size: 200% auto;
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+          animation: shimmer 4s linear infinite;
+          filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.3));
         }
         .vertical-text {
           writing-mode: vertical-rl;
