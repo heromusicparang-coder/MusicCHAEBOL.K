@@ -483,7 +483,7 @@ export default function App() {
                 Visual Identity
               </motion.h2>
               <p className="text-stardust/70 font-light leading-relaxed text-lg italic">
-                "음악재벌K의 비주얼은, 하루를 살아가는 한 사람의 모습을 그대로 투영합니다. 음악으로 채워진 그 하루를 모든 감각으로 받아들이는 한 사람의 자아 그 자체로."
+                "음악재벌K의 비주얼은, 음악으로 채워진 하루를 모든 감각으로 받아들이는 한 사람. 그 자체입니다."
               </p>
             </div>
             <div className="hidden md:block">
