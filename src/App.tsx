@@ -93,7 +93,7 @@ export default function App() {
               transition={{ delay: 0.2 }}
               className="text-gold font-serif italic text-xl md:text-2xl mb-4 tracking-wide"
             >
-              세상 단 하나 뿐인 남자,
+              -HearWeGo!-
             </motion.h2>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
@@ -184,14 +184,14 @@ export default function App() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
             {/* Album Cover Art Display */}
             <div className="lg:col-span-5">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative aspect-square bg-ebony border border-white/5 shadow-2xl flex items-center justify-center overflow-hidden group"
+                className="relative aspect-square bg-[#E5E5E5] border border-white/5 shadow-2xl flex items-center justify-center overflow-hidden group mb-8"
               >
                   <img 
                     src="/smallJaket1.png" 
@@ -209,35 +209,99 @@ export default function App() {
                   </div>
                 </div>
               </motion.div>
-            </div>
 
+              {/* Album Introduction Text */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="space-y-6"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="h-[1px] w-8 bg-gold/50"></div>
+                  <h3 className="text-gold text-[10px] tracking-[0.4em] uppercase font-bold text-center">ALBUM INTRODUCTION</h3>
+                  <div className="h-[1px] w-8 bg-gold/50"></div>
+                </div>
+                
+                <div className="space-y-4 text-stardust/80 text-sm leading-relaxed font-light italic text-center px-4">
+                  <p className="text-gold/90 font-medium not-italic mb-6">‘음악재벌K 1st. M.A.M'</p>
+                  <p>엄마.<br/>당신의 아들로 태어나 마이크를 쥐고 <br/>정성껏 담았습니다. <br/>이야기를, 소리를, 삶을.</p>
+                  <p>여러분께 닿을 순간까지 아름답기만을 바랐습니다.<br/>팔 벌려 안아줄 반가운 사람처럼, 지금 들리는 소리에 담은 정성을 마음껏 누려주시옵소서.</p>
+                  <p className="text-xs pt-4 border-t border-white/5 opacity-60">* 혼자만의 속삭임이 기타리스트 '이완희' 군을 만나, 어우러지고, 멋들어지고, 생기가 더 해졌습니다.</p>
+                  <p className="text-xs opacity-60">ARTSTAGE Audio의 '천호성' 프로듀서님의 손길이 닿아 조화롭게 완성되었습니다.<br/>살며시 내려앉은 겨울 새벽의 눈처럼, 녹아든 Yunnia (윤니아), 오고은, 두 분의 화음들로 더욱 풍성할 수 있었습니다.</p>
+                  <p className="pt-6">이 앨범에 담긴 소리들이 닿은 <br/>모든 분들게 축복이 가득하길 바라며,<br/>다음 앨범에서는 더욱 더 정성 담은 소리로<br/>인사드리겠습니다.</p>
+                </div>
+              </motion.div>
+            </div>
+ 
             {/* Tracklist List */}
             <div className="lg:col-span-7">
-              <div className="space-y-1">
-                {TRACKS.map((track, i) => (
-                  <motion.div
-                    key={track.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.05 * i }}
-                    whileHover={{ x: 10 }}
-                    className="group flex items-center justify-between py-4 border-b border-white/5 hover:border-gold/30 transition-all cursor-pointer"
-                  >
-                    <div className="flex items-center gap-6">
-                      <span className="text-[10px] font-mono text-stardust group-hover:text-gold transition-colors">{track.id}</span>
-                      <div>
-                        <h4 className={`text-sm md:text-base tracking-wide transition-colors ${track.isTitle ? "text-gold font-medium" : "text-ghost group-hover:text-gold"}`}>
-                          {track.title}
-                          {track.isTitle && <span className="ml-3 text-[9px] px-1 border border-gold/50 text-gold uppercase tracking-widest bg-gold/5 pt-[1px]">Title</span>}
-                        </h4>
-                        <span className="text-[10px] text-stardust/60 italic font-light">{track.version}</span>
+              <div className="mb-12">
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="text-gold text-[10px] tracking-[0.4em] uppercase font-bold">TRACK LIST</span>
+                  <div className="h-[1px] flex-grow bg-white/5"></div>
+                </div>
+                <div className="space-y-1">
+                  {TRACKS.map((track, i) => (
+                    <motion.div
+                      key={track.id}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.05 * i }}
+                      whileHover={{ x: 10 }}
+                      className="group flex items-center justify-between py-4 border-b border-white/5 hover:border-gold/30 transition-all cursor-pointer"
+                    >
+                      <div className="flex items-center gap-6">
+                        <span className="text-[10px] font-mono text-stardust group-hover:text-gold transition-colors">{track.id}</span>
+                        <div>
+                          <h4 className={`text-sm md:text-base tracking-wide transition-colors ${track.isTitle ? "text-gold font-medium" : "text-ghost group-hover:text-gold"}`}>
+                            {track.title}
+                            {track.isTitle && <span className="ml-3 text-[9px] px-1 border border-gold/50 text-gold uppercase tracking-widest bg-gold/5 pt-[1px]">Title</span>}
+                          </h4>
+                          <span className="text-[10px] text-stardust/60 italic font-light">{track.version}</span>
+                        </div>
                       </div>
-                    </div>
-                    <Play size={12} className="opacity-0 group-hover:opacity-100 text-gold transition-all" />
-                  </motion.div>
-                ))}
+                      <Play size={12} className="opacity-0 group-hover:opacity-100 text-gold transition-all" />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
+
+              {/* Credits Section */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="bg-ebony/40 p-8 border border-white/5"
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="text-gold text-[10px] tracking-[0.4em] uppercase font-bold">CREDITS</span>
+                  <div className="h-[1px] flex-grow bg-white/5"></div>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+                  {[
+                    { label: "작사, 작곡", value: "음악재벌K" },
+                    { label: "편곡", value: "이완희 & 음악재벌K, DJXIS" },
+                    { label: "TRACKING & SOUND DESIGN", value: "음악재벌K & 이완희" },
+                    { label: "GUITAR", value: "이완희" },
+                    { label: "VOCAL", value: "음악재벌K" },
+                    { label: "RECORDING", value: "음악재벌K" },
+                    { label: "MIXING & MASTERING", value: "ARTSTAGE Audio 천호성" },
+                    { label: "CHORUS", value: "Yunnia (윤니아), 오고은" },
+                    { label: "ALBUM ART WORK", value: "Jung jin hee" },
+                    { label: "THANKS TO", value: "first of all 'YOU'" },
+                    { label: "VERY ~ SPECIAL THANKS TO", value: "세상의 모든 울 엄마들" }
+                  ].map((credit, i) => (
+                    <div key={credit.label} className="space-y-1">
+                      <span className="text-[10px] uppercase tracking-widest text-gold/40 block">{credit.label}</span>
+                      <span className="text-stardust/90 text-xs font-light tracking-wide">{credit.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -263,14 +327,14 @@ export default function App() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="w-40 h-40 md:w-48 md:h-56 bg-ebony rounded-lg overflow-hidden border border-white/10 shadow-2xl relative group"
+                  className="w-full max-w-[280px] h-auto aspect-[3/4] md:w-48 md:h-64 bg-[#E5E5E5] rounded-lg overflow-hidden border border-white/10 shadow-2xl relative group"
                 >
                   <img 
                     src="/smallPROFILE1.png" 
                     alt="MusicCHAEBOL.K Profile Portrait" 
-                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-all duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gold/5 group-hover:bg-transparent transition-colors"></div>
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                 </motion.div>
 
                 <motion.h2 
@@ -417,13 +481,13 @@ export default function App() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {/* Featured Large Image */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="md:col-span-2 md:row-span-2 aspect-[4/5] bg-[#E5E5E5] overflow-hidden border border-white/5 shadow-2xl group cursor-zoom-in relative"
+              className="col-span-2 row-span-2 aspect-[4/5] md:aspect-auto bg-[#E5E5E5] overflow-hidden border border-white/5 shadow-2xl group cursor-zoom-in relative"
             >
               <img 
                 src="/HP2.png" 
@@ -438,18 +502,28 @@ export default function App() {
 
             {/* Grid Items */}
             {[
-              { id: '02', label: 'Perspective', url: '/HP3.png', scale: 'object-contain' },
-              { id: '03', label: 'Sentiment', url: '/HP4.png', scale: 'object-contain grayscale hover:grayscale-0' },
-              { id: '04', label: 'Presence', url: '/HP5.png', scale: 'object-contain brightness-95 group-hover:brightness-100' },
-              { id: '05', label: 'Character', url: '/HP1.png', scale: 'object-contain' }
+              { id: '02', label: 'Perspective', url: '/HP3.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
+              { id: '03', label: 'Sentiment', url: '/HP4.png', scale: 'object-contain grayscale hover:grayscale-0', className: 'col-span-1 row-span-1' },
+              { id: '04', label: 'Presence', url: '/HP5.png', scale: 'object-contain brightness-95 group-hover:brightness-100', className: 'col-span-1 row-span-2' },
+              { id: '05', label: 'Character', url: '/HP1.png', scale: 'object-contain', className: 'col-span-2 md:col-span-1 row-span-1' },
+              { id: '06', label: 'Reflection', url: '/HP6.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
+              { id: '07', label: 'Aura', url: '/HP7.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
+              { id: '08', label: 'Moment', url: '/HP8.png', scale: 'object-contain', className: 'col-span-2 row-span-1' },
+              { id: '09', label: 'Essence', url: '/HP9-1.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
+              { id: '10', label: 'Rhythm', url: '/HP10-1.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
+              { id: '11', label: 'Soul', url: '/HP11-1.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
+              { id: '12', label: 'Vision', url: '/HP12-1.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
+              { id: '13', label: 'Depth', url: '/HP13.png', scale: 'object-contain', className: 'col-span-1 row-span-1' },
+              { id: '14', label: 'Contrast', url: '/HP14.png', scale: 'object-contain', className: 'col-span-2 md:col-span-1 row-span-1' },
+              { id: '15', label: 'Harmony', url: '/HP15.png', scale: 'object-contain', className: 'col-span-1 row-span-1' }
             ].map((item, i) => (
               <motion.div 
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-                className="aspect-square bg-[#E5E5E5] overflow-hidden border border-white/5 shadow-2xl group cursor-zoom-in relative"
+                transition={{ delay: 0.05 * i }}
+                className={`${item.className} aspect-square md:aspect-auto bg-[#E5E5E5] overflow-hidden border border-white/5 shadow-2xl group cursor-zoom-in relative`}
               >
                 <img 
                   src={item.url} 
