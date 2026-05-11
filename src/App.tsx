@@ -92,7 +92,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-gold font-serif italic text-lg md:text-2xl mb-4 tracking-wide notranslate"
+              className="text-gold font-serif italic text-sm md:text-lg mb-4 tracking-wide notranslate"
               translate="no"
             >
               -HearWeGo!-
@@ -102,7 +102,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-4xl md:text-[160px] font-serif leading-[0.85] tracking-tighter mb-8 md:mb-12 notranslate"
+              className="text-3xl md:text-[100px] font-serif leading-[0.85] tracking-tighter mb-8 md:mb-10 notranslate"
               translate="no"
             >
               Music<br/><span className="text-gold">CHAEBOL.K</span>
@@ -116,18 +116,18 @@ export default function App() {
               className="flex flex-col items-center"
             >
               <div className="h-[1px] w-16 md:w-24 bg-gold mb-6 md:mb-8 opacity-50"></div>
-              <p className="text-stardust text-base md:text-xl leading-relaxed max-w-md font-light mb-4">
+              <p className="text-stardust text-sm md:text-base leading-relaxed max-w-md font-light mb-4">
                 세포 하나하나까지 '음악인' 바로 그.
               </p>
               <div className="mb-6 md:mb-10 notranslate" translate="no">
-                <h4 className="text-gold/60 font-serif text-4xl md:text-[120px] leading-tight tracking-[0.2em]">음악재벌K</h4>
+                <h4 className="text-gold/60 font-serif text-2xl md:text-[80px] leading-tight tracking-[0.2em]">음악재벌K</h4>
               </div>
  
               <motion.button 
                 whileHover={{ backgroundColor: "var(--color-gold)", color: "#000", scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('music')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-10 py-4 md:px-12 md:py-5 border border-gold text-gold uppercase text-[10px] md:text-[11px] tracking-[0.4em] transition-all cursor-pointer bg-gold/5 backdrop-blur-sm"
+                className="px-10 py-4 md:px-12 md:py-5 border border-gold text-gold uppercase text-[8px] md:text-[10px] tracking-[0.4em] transition-all cursor-pointer bg-gold/5 backdrop-blur-sm"
               >
                 Listen Now
               </motion.button>
@@ -139,8 +139,8 @@ export default function App() {
                   className="flex flex-col items-center notranslate" 
                   translate="no"
                 >
-                  <span className="text-[9px] md:text-xs tracking-[0.8em] text-gold/40 uppercase mb-3 md:mb-4 font-medium">New Release.</span>
-                  <span className="sparkle-text text-3xl md:text-6xl font-black tracking-[0.2em] md:tracking-[0.3em] uppercase italic leading-none">M.A.M</span>
+                  <span className="text-[8px] md:text-[10px] tracking-[0.8em] text-gold/40 uppercase mb-3 md:mb-4 font-medium">New Release.</span>
+                  <span className="sparkle-text text-xl md:text-4xl font-black tracking-[0.2em] md:tracking-[0.3em] uppercase italic leading-none">M.A.M</span>
                 </motion.div>
               </div>
             </motion.div>
