@@ -238,8 +238,8 @@ export default function App() {
                   <p className="text-gold/90 font-medium not-italic mb-6 notranslate" translate="no">‘음악재벌K 1st. M.A.M'</p>
                   <p>엄마.<br/>당신의 아들로 태어나 마이크를 쥐고 <br/>정성껏 담았습니다. <br/>이야기를, 소리를, 삶을.</p>
                   <p>여러분께 닿을 순간까지 아름답기만을 바랐습니다.<br/>팔 벌려 안아줄 반가운 사람처럼, 지금 들리는 소리에 담은 정성을 마음껏 누려주시옵소서.</p>
-                  <p className="text-xs pt-4 border-t border-white/5 opacity-60">* 혼자만의 속삭임이 기타리스트 '이완희' 군을 만나, 어우러지고, 멋들어지고, 생기가 더 해졌습니다.</p>
-                  <p className="text-xs opacity-60">ARTSTAGE Audio의 '천호성' 프로듀서님의 손길이 닿아 조화롭게 완성되었습니다.<br/>살며시 내려앉은 겨울 새벽의 눈처럼, 녹아든 Yunnia (윤니아), 오고은, 두 분의 화음들로 더욱 풍성할 수 있었습니다.</p>
+                  <p className="text-xs pt-4 border-t border-white/5 text-stardust/90">* 혼자만의 속삭임이 기타리스트 '이완희' 군을 만나, 어우러지고, 멋들어지고, 생기가 더 해졌습니다.</p>
+                  <p className="text-xs text-stardust/90">ARTSTAGE Audio의 '천호성' 프로듀서님의 손길이 닿아 조화롭게 완성되었습니다.<br/>살며시 내려앉은 겨울 새벽의 눈처럼, 녹아든 Yunnia (윤니아), 오고은, 두 분의 화음들로 더욱 풍성할 수 있었습니다.</p>
                   <p className="pt-6">이 앨범에 담긴 소리들이 닿은 <br/>모든 분들게 축복이 가득하길 바라며,<br/>다음 앨범에서는 더욱 더 정성 담은 소리로<br/>인사드리겠습니다.</p>
                 </div>
               </motion.div>
@@ -270,7 +270,7 @@ export default function App() {
                             {track.title}
                             {track.isTitle && <span className="ml-3 text-[9px] px-1 border border-gold/50 text-gold uppercase tracking-widest bg-gold/5 pt-[1px]">Title</span>}
                           </h4>
-                          <span className="text-[10px] text-stardust/60 italic font-light">{track.version}</span>
+                          <span className="text-[10px] text-gold/80 italic font-normal tracking-wider">{track.version}</span>
                         </div>
                       </div>
                       <Play size={12} className="opacity-0 group-hover:opacity-100 text-gold transition-all" />
@@ -308,7 +308,7 @@ export default function App() {
                 { label: "VERY ~ SPECIAL THANKS TO", value: "세상의 모든 울 엄마들", className: "sm:col-span-2 lg:col-span-2" }
               ].map((credit, i) => (
                 <div key={credit.label} className={`space-y-2 ${credit.className || ""}`}>
-                  <span className="text-[10px] uppercase tracking-widest text-gold/40 block border-b border-gold/10 pb-1">{credit.label}</span>
+                  <span className="text-[10px] uppercase tracking-widest text-gold/70 block border-b border-gold/20 pb-1">{credit.label}</span>
                   <span className="text-stardust/90 text-sm font-light tracking-wide block">{credit.value}</span>
                 </div>
               ))}
@@ -493,57 +493,32 @@ export default function App() {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-5xl mx-auto">
             {[
-              { id: '01', label: 'Nocturne', className: 'col-span-2 row-span-2' },
-              { id: '02', label: 'Horizon', className: 'col-span-1 row-span-1' },
-              { id: '03', label: 'Echo', className: 'col-span-1 row-span-1' },
-              { id: '04', label: 'Pulse', className: 'col-span-1 row-span-2' },
-              { id: '05', label: 'Zenith', className: 'col-span-1 row-span-1' },
-              { id: '06', label: 'Mirage', className: 'col-span-1 row-span-1' },
-              { id: '07', label: 'Flow', className: 'col-span-1 row-span-1' },
-              { id: '08', label: 'Resonance', className: 'col-span-2 row-span-1' },
-              { id: '11', label: 'Bloom', className: 'col-span-1 row-span-1' },
-              { id: '09', label: 'Void', className: 'col-span-2 row-span-2' },
-              { id: '10', label: 'Spectrum', className: 'col-span-1 row-span-1' },
-              { id: '12', label: 'Catalyst', className: 'col-span-1 row-span-2' },
-              { id: '13', label: 'Drift', className: 'col-span-1 row-span-1' },
-              { id: '14', label: 'Epoch', className: 'col-span-1 row-span-1' },
-              { id: '15', label: 'Flux', className: 'col-span-1 row-span-1' },
-              { id: '16', label: 'Glow', className: 'col-span-2 row-span-1' },
-              { id: '17', label: 'Halo', className: 'col-span-2 row-span-2' },
-              { id: '18', label: 'Ion', className: 'col-span-1 row-span-1' },
-              { id: '19', label: 'Jolt', className: 'col-span-1 row-span-1' },
-              { id: '20', label: 'Kinetic', className: 'col-span-2 row-span-1' },
-              { id: '21', label: 'Lucid', className: 'col-span-1 row-span-2' },
-              { id: '22', label: 'Mystic', className: 'col-span-1 row-span-1' },
-              { id: '23', label: 'Nexus', className: 'col-span-1 row-span-1' },
-              { id: '24', label: 'Orbit', className: 'col-span-1 row-span-1' },
-              { id: '25', label: 'Phase', className: 'col-span-2 row-span-2' },
-              { id: '26', label: 'Quartz', className: 'col-span-1 row-span-1' },
-              { id: '27', label: 'Rift', className: 'col-span-1 row-span-1' },
-              { id: '28', label: 'Solace', className: 'col-span-1 row-span-2' },
-              { id: '29', label: 'Trace', className: 'col-span-1 row-span-1' },
-              { id: '30', label: 'Unity', className: 'col-span-1 row-span-1' },
-              { id: '31', label: 'Vital', className: 'col-span-2 row-span-1' },
-              { id: '32', label: 'Warp', className: 'col-span-1 row-span-1' },
+              { id: '07', label: 'Flow', className: 'md:translate-y-0' },
+              { id: '08', label: 'Resonance', className: 'md:translate-y-24' },
+              { id: '11', label: 'Bloom', className: 'md:-translate-y-12' },
+              { id: '16', label: 'Glow', className: 'md:translate-y-12' },
             ].map((item, i) => (
               <motion.div 
                 key={item.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: (i % 6) * 0.1 }}
-                className={`${item.className} aspect-square md:aspect-auto bg-ebony overflow-hidden border border-white/5 shadow-2xl group cursor-pointer relative rounded-sm`}
+                transition={{ duration: 1, delay: i * 0.2 }}
+                className={`${item.className} aspect-[4/5] bg-ebony/50 overflow-hidden border border-white/5 shadow-2xl group cursor-pointer relative rounded-md`}
               >
                 <img 
                   src={`/HP${item.id}.png`} 
                   alt={`MusicCHAEBOL.K Visual ${item.id}`} 
-                  className="w-full h-full object-contain transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1"
+                  className="w-full h-full object-contain transition-all duration-1000 group-hover:scale-105 p-4"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 left-4 text-white text-[9px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-2 group-hover:translate-y-0">
-                  {item.label}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute bottom-8 left-8">
+                  <span className="text-gold/60 text-[10px] tracking-[0.4em] uppercase mb-2 block">Visual Archive</span>
+                  <p className="text-white text-lg font-serif italic tracking-wider">
+                    {item.label}
+                  </p>
                 </div>
               </motion.div>
             ))}
