@@ -84,7 +84,22 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative z-10 flex flex-col min-h-screen justify-center">
+      <section id="home" className="relative flex flex-col min-h-screen justify-center overflow-hidden">
+        {/* Video Background Layer */}
+        <div className="absolute inset-0 z-0">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="absolute inset-0 w-full h-full object-contain"
+          >
+            <source src="/homemovie.mp4" type="video/mp4" />
+          </video>
+          {/* Dark Cinematic Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80 backdrop-blur-[2px]" />
+        </div>
+
         <main className="relative z-10 px-8 md:px-16 pt-24 md:pt-32 pb-12 md:pb-20 max-w-4xl mx-auto w-full text-center">
           <div className="flex flex-col items-center justify-center">
             <motion.h2 
