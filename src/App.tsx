@@ -27,6 +27,12 @@ const TRACKS = [
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("Home");
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const HOME_VIDEOS = ["/MAIN05.21.mp4", "/MAIN05.21.1.mp4"];
+
+  const handleVideoEnded = () => {
+    setCurrentVideoIndex((prev) => (prev + 1) % HOME_VIDEOS.length);
+  };
 
   return (
     <div className="min-h-screen bg-nero text-ghost font-sans relative flex flex-col selection:bg-gold selection:text-black">
@@ -61,7 +67,7 @@ export default function App() {
           MusicCHAEBOL.K ARCHIVE
         </motion.div>
         <div className="hidden md:flex gap-12 text-[11px] tracking-[0.2em] text-stardust font-medium uppercase">
-          {["Home", "Music", "Profile", "Visuals", "Connect"].map((item, i) => (
+          {["Home", "Music", "Profile", "Visuals", "Ani", "Connect"].map((item, i) => (
             <motion.button
               key={item}
               initial={{ opacity: 0, y: -10 }}
@@ -88,13 +94,14 @@ export default function App() {
         {/* Video Background Layer */}
         <div className="absolute inset-0 z-0">
           <video 
+            key={HOME_VIDEOS[currentVideoIndex]}
             autoPlay 
             muted 
-            loop 
             playsInline 
+            onEnded={handleVideoEnded}
             className="absolute inset-0 w-full h-full object-contain"
           >
-            <source src="/homemovie.mp4" type="video/mp4" />
+            <source src={HOME_VIDEOS[currentVideoIndex]} type="video/mp4" />
           </video>
           {/* Dark Cinematic Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80 backdrop-blur-[2px]" />
@@ -574,6 +581,84 @@ export default function App() {
             <div className="h-[1px] w-full bg-white/5"></div>
             <p className="text-[10px] tracking-[0.5em] text-stardust/40 uppercase whitespace-nowrap">
               The Aesthetic of Loneliness
+            </p>
+            <div className="h-[1px] w-full bg-white/5"></div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Ani Identity Section */}
+      <section id="ani" className="relative z-10 py-32 px-8 md:px-16 border-t border-white/5 bg-nero/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div className="max-w-2xl">
+              <motion.span 
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="text-gold text-xs tracking-[0.4em] uppercase block mb-4"
+              >
+                Character
+              </motion.span>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-4xl md:text-6xl font-serif tracking-tight mb-8 notranslate"
+                translate="no"
+              >
+                Ani Identity
+              </motion.h2>
+              <p className="text-stardust/70 font-light leading-relaxed text-lg italic">
+                "상상과 예술이 만나는 또 다른 자아, 음악재벌K의 애니메이션 페르소나."
+              </p>
+            </div>
+            <div className="hidden md:block">
+              <div className="text-[10px] tracking-[0.8em] text-gold/20 uppercase vertical-text">
+                Ani Persona
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto items-start">
+            {[
+              { id: '1', label: 'Starlight', className: 'md:translate-y-0' },
+              { id: '2', label: 'Elegance', className: 'md:translate-y-12' },
+              { id: '3', label: 'Rhythm', className: 'md:-translate-y-6' },
+            ].map((item, i) => (
+              <motion.div 
+                key={item.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: i * 0.2 }}
+                className={`${item.className} aspect-[4/5] bg-ebony/50 overflow-hidden border border-white/5 shadow-2xl group cursor-pointer relative rounded-md`}
+              >
+                <img 
+                  src={`/ani${item.id}.png`} 
+                  alt={`MusicCHAEBOL.K Ani Visual ${item.id}`} 
+                  className="w-full h-full object-contain transition-all duration-1000 group-hover:scale-105 p-4"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute bottom-8 left-8">
+                  <span className="text-gold/60 text-[10px] tracking-[0.4em] uppercase mb-2 block">Ani Archive</span>
+                  <p className="text-white text-lg font-serif italic tracking-wider">
+                    {item.label}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="mt-20 flex items-center justify-center gap-8"
+          >
+            <div className="h-[1px] w-full bg-white/5"></div>
+            <p className="text-[10px] tracking-[0.5em] text-stardust/40 uppercase whitespace-nowrap">
+              The Symphony of Imagination
             </p>
             <div className="h-[1px] w-full bg-white/5"></div>
           </motion.div>
