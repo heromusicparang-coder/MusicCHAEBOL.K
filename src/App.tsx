@@ -163,7 +163,7 @@ export default function App() {
           MusicCHAEBOL.K ARCHIVE
         </motion.div>
         <div className="hidden md:flex gap-12 text-[11px] tracking-[0.2em] text-stardust font-medium uppercase">
-          {["Home", "Music", "Profile", "Visuals", "Connect"].map((tab, idx) => (
+          {["Music", "Profile", "Visuals", "Connect"].map((tab, idx) => (
             <motion.button
               key={tab}
               initial={{ opacity: 0, y: -10 }}
@@ -193,7 +193,7 @@ export default function App() {
           >
             <source src={HOME_VIDEOS[currentVideoIndex]} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70" />
         </div>
 
         <main className="relative z-10 px-8 md:px-16 pt-24 md:pt-32 pb-12 md:pb-20 max-w-4xl mx-auto w-full text-center">
@@ -221,73 +221,7 @@ export default function App() {
               <span className="text-gold">CHAEBOL.K</span>
             </motion.h1>
 
-            <div className="flex flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, scaleX: 0 }}
-                whileInView={{ opacity: 0.5, scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-                className="h-[1px] w-16 md:w-24 bg-gold mb-6 md:mb-8 origin-center"
-              />
-              <motion.p
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1, duration: 0.8 }}
-                className="text-stardust text-sm md:text-base leading-relaxed max-w-md font-light mb-4"
-              >
-                세포 하나하나까지 '음악인' 바로 그.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.2, duration: 0.8 }}
-                className="mb-6 md:mb-10 notranslate"
-                translate="no"
-              >
-                <h4 className="text-gold/60 font-serif text-2xl md:text-[80px] leading-tight tracking-[0.2em]">
-                  음악재벌K
-                </h4>
-              </motion.div>
-
-              <motion.button
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.4, duration: 0.8 }}
-                whileHover={{ backgroundColor: "var(--color-gold)", color: "#000", scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleScrollToSection("Music")}
-                className="px-10 py-4 md:px-12 md:py-5 border border-gold text-gold uppercase text-[8px] md:text-[10px] tracking-[0.4em] transition-all cursor-pointer bg-gold/5 backdrop-blur-sm"
-              >
-                Listen Now
-              </motion.button>
-
-              <div className="mt-12 md:mt-20 flex flex-col items-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1.6, duration: 0.8 }}
-                  className="flex flex-col items-center notranslate"
-                  translate="no"
-                >
-                  <span className="text-[8px] md:text-[10px] tracking-[0.8em] text-gold/40 uppercase mb-3 md:mb-4 font-medium">
-                    New Release.
-                  </span>
-                  <motion.span
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1.8, duration: 1 }}
-                    className="sparkle-text text-xl md:text-4xl font-black tracking-[0.2em] md:tracking-[0.3em] uppercase italic leading-none"
-                  >
-                    M.A.M
-                  </motion.span>
-                </motion.div>
-              </div>
-            </div>
+            {/* Content removed to keep the video prominent */}
           </div>
         </main>
       </section>
